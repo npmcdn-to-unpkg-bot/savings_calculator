@@ -1,0 +1,17 @@
+
+<div id='entry-form' style="padding:20px;">
+	<%= form_for @entry do |f| %>
+
+		<%= f.label :monthly_energy_usage %><br>
+	  <%= f.text_field :monthly_energy_usage %><br />
+
+		<%= f.label :zip %><br>
+	  <%= f.text_field :zip %><br />
+
+	  <%= f.label :provider %><br>
+	  <%= f.text_field :provider %><br />
+
+	  <%= f.submit %>
+
+	<% end %>
+</div>
