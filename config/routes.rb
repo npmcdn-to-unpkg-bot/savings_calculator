@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :entries
+  root 'entries#new'
 
   # get '/entry/new' => 'entry#new'
   # post '/entry' => 'entry#create'
