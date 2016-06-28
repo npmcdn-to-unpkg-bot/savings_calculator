@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627194604) do
+ActiveRecord::Schema.define(version: 20160628205222) do
 
   create_table "entries", force: :cascade do |t|
     t.integer  "monthly_energy_usage"
@@ -20,6 +20,37 @@ ActiveRecord::Schema.define(version: 20160627194604) do
     t.string   "subregion"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+  end
+
+  create_table "heating_emissions", force: :cascade do |t|
+    t.string   "source"
+    t.float    "emissions"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rate_providers", force: :cascade do |t|
+    t.integer  "zip"
+    t.string   "provider"
+    t.float    "rate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subregion_emissions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "acronym"
+    t.float    "emissions"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "zip_subregions", force: :cascade do |t|
+    t.integer  "zip"
+    t.string   "primary_sub"
+    t.string   "secondary_sub"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end

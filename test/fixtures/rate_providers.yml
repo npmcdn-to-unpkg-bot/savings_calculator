@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  zip: 1
+  provider: MyString
+  rate: 1.5
+
+two:
+  zip: 1
+  provider: MyString
+  rate: 1.5

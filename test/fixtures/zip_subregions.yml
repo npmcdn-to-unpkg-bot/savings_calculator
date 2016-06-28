@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  zip: 1
+  primary_sub: MyString
+  secondary_sub: MyString
+
+two:
+  zip: 1
+  primary_sub: MyString
+  secondary_sub: MyString
