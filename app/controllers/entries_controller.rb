@@ -1,6 +1,5 @@
 class EntriesController < ApplicationController
   def new
-  	@time = Time.now
   	@entry = Entry.new
   end
 
