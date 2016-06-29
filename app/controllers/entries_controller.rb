@@ -5,6 +5,9 @@ class EntriesController < ApplicationController
 
   def create
   	@entry = Entry.create(entry_params)
+  	@zip = @entry.zip
+  	@providers = RateProvider.where(zip: @zip)
+
   	if @entry.persisted?
 			flash.now[:success] = "Your entry was recorded!"
 		else
