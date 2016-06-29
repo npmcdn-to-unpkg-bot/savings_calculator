@@ -8,10 +8,21 @@
 		<%= f.label :zip %><br>
 	  <%= f.text_field :zip %><br />
 
-	  <%= f.label :provider %><br>
-	  <%= f.collection_select(:provider, RateProvider.all, :id, :provider) %><br /><br>
+	  <%= f.label :provider, :class => "hidden_option" %><br>
+	  <%= f.collection_select(:provider, RateProvider.all, :id, :provider, {:include_blank => 'Select Provider'}, {:class => 'hidden_option'}) %><br /><br>
 
 	  <%= f.submit %>
 
 	<% end %>
+	<%= javascript_tag do %>
+	$(document).ready(function(){
+     $("#entry_zip").change(function(){
+        zipcode = $("#entry_zip").val()
+    
+        if (!zipcode.null) {
+        	$(".hidden_option").fadeIn('fast'); 
+        }              
+     });        
+ });
+ <% end %>
 </div>
