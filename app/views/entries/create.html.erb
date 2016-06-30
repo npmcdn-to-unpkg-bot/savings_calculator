@@ -9,16 +9,32 @@
 <%= @subregion.primary_sub %>
 <% if (@rate) %>
 	<%= @rate.rate.round(2) %><br>
-	<%= @bill.round(2) %><br>
+	<%= @electric_bill.round(2) %><br>
 
-	<%= @usage %><br>
-	<%= @reduced %><br>
+	<h3> electric </h3><br>
+	<%= @electric_usage %><br>
+	<%= @electric_reduced %><br>
+	<%= @reduced_electric_bill %><br>
 
+	<h3> heating </h3><br>
 	<%= @heating_usage %><br>
 	<%= @heating_reduced %><br>
+  <%= @heating_bill.round(2) %><br>
+  <%= @reduced_heating_bill %><br>
 
-	<%= @heating_bill.round(2) %>
+	<h3> total bill </h3><br>
+	<%= @total_bill.round(2) %><br>
+	<%= @total_reduced_bill.round(2) %>
 
+	<h3> total savings </h3><br>
+  <%= @total_savings.round(2) %><br>
+  
+  <h3> total emissions </h3><br>
+  <%= @total_emissions.round(2)%><br>
+  <%= @reduced_emissions.round(2)%><br>
+
+   <h3> emission reduction </h3><br>
+   <%= @emission_reduction.round(2)%><br>
 
 <% else %>
 	<%= @error %>

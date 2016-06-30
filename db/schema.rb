@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630210851) do
+ActiveRecord::Schema.define(version: 20160630222246) do
 
   create_table "entries", force: :cascade do |t|
     t.integer  "monthly_energy_usage"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20160630210851) do
     t.float    "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float    "emissions"
+    t.float    "conversion"
   end
 
   create_table "heating_emissions", force: :cascade do |t|
