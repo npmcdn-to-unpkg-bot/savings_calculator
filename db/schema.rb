@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628205222) do
+ActiveRecord::Schema.define(version: 20160630194736) do
 
   create_table "entries", force: :cascade do |t|
     t.integer  "monthly_energy_usage"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20160628205222) do
     t.string   "subregion"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.string   "fuel_type"
+    t.float    "fuel_usage"
   end
 
   create_table "heating_emissions", force: :cascade do |t|
