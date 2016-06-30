@@ -9,7 +9,15 @@
 <%= @subregion.primary_sub %>
 <% if (@rate) %>
 	<%= @rate.rate.round(2) %><br>
-	<%= @bill.round(2) %>
+	<%= @bill.round(2) %><br>
+
+	<%= @usage %><br>
+	<%= @reduced %><br>
+
+	<%= @heating_usage %><br>
+	<%= @heating_reduced %>
+
+
 <% else %>
 	<%= @error %>
 <% end %>
