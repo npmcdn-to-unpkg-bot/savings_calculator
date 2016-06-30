@@ -1,44 +1,24 @@
-<h1>Entry recorded!</h1>
+<%= @subregion.primary_sub %>
+<% if (@rate) %>
+  
+  <h3> total emissions </h3><br>
+  <%= @total_emissions.round(2)%><br>
+  <%= @reduced_emissions.round(2)%><br>
+
+	 <h3> emission reduction </h3><br>
+	 <%= @emission_reduction.round(2)%><br>
+
+	 <h3> trees planted in a year </h3><br>
+	  <%= @trees_planted.round%><br>
+
+<% else %>
+	<%= @error %>
+<% end %>
+
+
 
 <!-- <select>
 	<% @providers.each do |provider| %>
 		<option value=<%= provider.provider %>><%= provider.provider %></option><br>
 	<% end %>
 </select> -->
-
-<%= @subregion.primary_sub %>
-<% if (@rate) %>
-	<%= @rate.rate.round(2) %><br>
-	<%= @electric_bill.round(2) %><br>
-
-	<h3> electric </h3><br>
-	<%= @electric_usage %><br>
-	<%= @electric_reduced %><br>
-	<%= @reduced_electric_bill %><br>
-
-	<h3> heating </h3><br>
-	<%= @heating_usage %><br>
-	<%= @heating_reduced %><br>
-  <%= @heating_bill.round(2) %><br>
-  <%= @reduced_heating_bill %><br>
-
-	<h3> total bill </h3><br>
-	<%= @total_bill.round(2) %><br>
-	<%= @total_reduced_bill.round(2) %>
-
-	<h3> total savings </h3><br>
-  <%= @total_savings.round(2) %><br>
-  
-  <h3> total emissions </h3><br>
-  <%= @total_emissions.round(2)%><br>
-  <%= @reduced_emissions.round(2)%><br>
-
-   <h3> emission reduction </h3><br>
-   <%= @emission_reduction.round(2)%><br>
-
-   <h3> trees planted in a year </h3><br>
-    <%= @trees_planted.round%><br>
-
-<% else %>
-	<%= @error %>
-<% end %>
