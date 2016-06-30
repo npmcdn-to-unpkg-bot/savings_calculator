@@ -5,5 +5,7 @@
 		<option value=<%= provider.provider %>><%= provider.provider %></option><br>
 	<% end %>
 </select> -->
+
 <%= @subregion.primary_sub %>
-<%= @provider %>
+<%= @rate.rate.round(2) %><br>
+<%= @bill.round(2) %>
