@@ -1,17 +1,16 @@
-
 <div id='entry-form' style="padding:20px;">
-	<%= form_for @entry do |f| %>
+    <%= form_for @entry do |f| %>
 
-		<%= f.label :monthly_energy_usage %><br>
-	  <%= f.text_field :monthly_energy_usage %><br />
+        <%= f.label :monthly_energy_usage %><br>
+      <%= f.text_field :monthly_energy_usage %><br />
 
-		<%= f.label :zip %><br>
-	  <%= f.text_field :zip %><br />	
+        <%= f.label :zip %><br>
+      <%= f.text_field :zip %><br />
 
-	  <%= f.label :provider %><br>
-	  <%= f.collection_select(:provider, RateProvider.all, :provider, {:include_blank => "Select Provider"})%><br /><br>
+      <%= f.label :provider %><br>
+      <%= f.collection_select(:provider, RateProvider.all, :provider, :provider, {:include_blank => "Select Provider"})%><br /><br>
 
-	  <%= f.submit(:Submit) %>
+      <%= f.submit(:Submit) %>
 
-	<% end %>
+    <% end %>
 </div>
