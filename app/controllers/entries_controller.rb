@@ -8,25 +8,21 @@ class EntriesController < ApplicationController
   	@zip = @entry.zip
   	@provider = @entry.provider
   	@usage = @entry.monthly_energy_usage
-  	@heating_usage = params[:entry][:fuel_usage].to_f
+  	@heating_usage = @entry.fuel_usage
+  	@fuel_type = @entry.fuel_type
 
   	@providers = RateProvider.where(zip: @zip)
   	@subregion = ZipSubregion.find_by_zip(@zip)
-  	#@rate = RateProvider.where(zip: @zip).first
+
   	if (@rate = RateProvider.where('zip = ? AND provider = ?', params[:entry][:zip], params[:entry][:provider]).first)
   		@bill = @usage * @rate.rate
+  		@heating_bill = @heating_usage * FuelCost.find_by_fuel_type(@fuel_type).cost
+
   		@reduced = @usage * (1 - (0.164 * 0.8))
   		@heating_reduced = @heating_usage * 0.88
-
-
     else
   	 @error = "no providers available"
-  
   	end
-  	# } else {
-  	# 	redirect_to root_path
-  	# }
-
 
   	if @entry.persisted?
 			flash.now[:success] = "Your entry was recorded!"
