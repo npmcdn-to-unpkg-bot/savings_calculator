@@ -12,8 +12,13 @@ class EntriesController < ApplicationController
   	@providers = RateProvider.where(zip: @zip)
   	@subregion = ZipSubregion.find_by_zip(@zip)
   	#@rate = RateProvider.where(zip: @zip).first
-  	@rate = RateProvider.where('zip = ? AND provider = ?', params[:entry][:zip], params[:entry][:provider]).first
+  	if (@rate = RateProvider.where('zip = ? AND provider = ?', params[:entry][:zip], params[:entry][:provider]).first)
+  	
   	 @bill = @usage * @rate.rate
+    else
+  	 @error = "no providers available"
+  
+  	end
   	# } else {
   	# 	redirect_to root_path
   	# }

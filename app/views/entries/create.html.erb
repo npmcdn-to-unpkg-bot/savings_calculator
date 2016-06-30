@@ -7,5 +7,9 @@
 </select> -->
 
 <%= @subregion.primary_sub %>
-<%= @rate.rate.round(2) %><br>
-<%= @bill.round(2) %>
+<% if (@rate) %>
+	<%= @rate.rate.round(2) %><br>
+	<%= @bill.round(2) %>
+<% else %>
+	<%= @error %>
+<% end %>
