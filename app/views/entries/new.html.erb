@@ -9,7 +9,7 @@
 	  <%= f.text_field :zip %><br />
 
 	  <%= f.label :provider %><br>
-	  <%= f.collection_select(:provider, RateProvider.all, :id, :provider, {:include_blank => "Select Provider"})%><br /><br>
+	  <%= f.collection_select(:provider, RateProvider.all, :provider, :provider, {:include_blank => "Select Provider"})%><br /><br>
 
 	  <%= f.submit(:Submit) %>
 
