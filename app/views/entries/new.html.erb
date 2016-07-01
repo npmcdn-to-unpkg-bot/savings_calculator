@@ -1,23 +1,39 @@
+<h1 class='title'>Savings Calculator</h1>
+
 <div id='entry-form' style="padding:20px;">
     <%= form_for @entry do |f| %>
 
-      <%= f.label :monthly_energy_usage %><br>
-      <%= f.text_field :monthly_energy_usage %><br />
+    	<div class='zip'>
+    		<span class = 'label'>Zip Code</span>
+	    	<%= f.label :zip, :class => "label-hide" %>
+	      <div><%= f.text_field :zip, :class => "zip-field" %></div>
+    	</div>
 
-      <%= f.label :zip %><br>
-      <%= f.text_field :zip %><br />
+    	<div class="container">
 
-      <%= f.label :provider %><br>
-      <%= f.collection_select(:provider, RateProvider.all, :provider, :provider, {:include_blank => "Select Provider"})%><br />
+    		<div class="field-col-1">
 
-      <%= f.label :fuel_type %><br>
-      <%= f.select :fuel_type, ['Natural Gas', 'Propane', 'Butane', 'Heating Oil', 'Kerosene', 'Coal', 'Electricity'] %><br />
+		      <%= f.label :monthly_energy_usage, "Monthly Energy Usage", class: "label" %>
+		      <div><%= f.text_field :monthly_energy_usage, :class => "entry" %></div>
 
-      <%= f.label :fuel_usage %><br>
-      <%= f.text_field :fuel_usage %><br /><br>
-      
+		      <%= f.label :fuel_usage, "Heating Fuel Usage", class: "label" %>
+		      <div><%= f.text_field :fuel_usage, :class => "entry" %></div>
 
-      <%= f.submit(:Submit) %>
+	      </div>
+
+	      <div class="field-col-2">
+		     
+		      <%= f.label :provider, "Energy Provider", class: "label" %>
+		      <div><%= f.collection_select(:provider, RateProvider.all, :provider, :provider, {:include_blank => "Select Provider"}, {:class => "dropdown"})%></div>
+
+		      <%= f.label :fuel_type, "Fuel Type", class: "label" %>
+		      <div><%= f.select :fuel_type, ['Natural Gas', 'Propane', 'Butane', 'Heating Oil', 'Kerosene', 'Coal', 'Electricity'], {include_blank: "Select Fuel Type"}, {class: "dropdown"} %></div>
+
+	      </div>
+
+      	<%= f.submit(:Submit, class: "submit") %>
+
+   		 </div>
 
     <% end %>
 </div>

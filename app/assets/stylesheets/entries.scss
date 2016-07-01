@@ -1,3 +1,82 @@
 // Place all the styles related to the entries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title {
+	text-align: center;
+	margin-top: 67px;
+	font-family: NeuzeitGro-Bol;
+  font-size: 32px;
+  font-weight: normal;
+  letter-spacing: -0.3px;
+  color: #000000;
+  margin-bottom: 0px;
+}
+
+.zip {
+	margin-top: 36px;
+	text-align: center;
+	margin-bottom: 64px;
+}
+
+.label-hide {
+	display: none;
+}
+
+.field-col-1 {
+	float: left;
+}
+
+.field-col-2 {
+	float: right;
+}
+
+.container {
+	width: 321px;
+	//height:500px;
+  margin: 0 auto; 
+}
+
+.dropdown {
+	width: 156px;
+  height: 44px;
+  border-radius: 3px;
+  border: solid 2px #e4e4e4;
+  margin-bottom: 56px;
+}
+
+.entry {
+	width: 112px;
+  height: 40px;
+  border-radius: 3px;
+  border: solid 2px #e4e4e4;
+  margin-bottom: 56px;
+}
+
+.zip-field {
+	width: 88px;
+  height: 40px;
+  border-radius: 3px;
+  border: solid 2px #e4e4e4;
+}
+
+.submit {
+	width: 321px;
+  height: 56px;
+  border-radius: 8px;
+  border: solid 2px #000000;
+  background-color: white;
+  font-family: NeuzeitGro-Reg;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.label {
+  height: 14px;
+  font-family: NeuzeitGro-Reg;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #000000;
+  margin: 1px;
+}
