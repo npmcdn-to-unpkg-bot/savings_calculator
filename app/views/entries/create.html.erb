@@ -1,19 +1,27 @@
-<%= @subregion.primary_sub %>
-<% if (@rate) %>
-  
-  <h3> total emissions </h3><br>
-  <%= @total_emissions.round(2)%><br>
-  <%= @reduced_emissions.round(2)%><br>
+<h1 class="title">Savings Calculator</h1>
 
-	 <h3> emission reduction </h3><br>
-	 <%= @emission_reduction.round(2)%><br>
+<div id="result-container" class="container">
+	<h2>Monthly Savings</h2>
 
-	 <h3> trees planted in a year </h3><br>
-	  <%= @trees_planted.round%><br>
+	<div class="savings">
+		<div class="energy-saving">
+			<p class="description">Your energy bill savings</p>
+			<p class="total-saving">$<%= @total_savings.round(2) %></p>
+		</div>
 
-<% else %>
-	<%= @error %>
-<% end %>
+		<div class="emission-saving">
+			<p class="description">Carbon saved</p>
+			<p class="cut-emission"><%= @emission_reduction.round(2) %></p>
+		</div>
+
+		<div class="trees">
+			<p class="description">Trees planted</p>
+			<p class="cut-emission"><%= @trees_planted.round %></p>
+		</div>
+
+	</div>
+</div>
+
 
 
 
