@@ -2,17 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.title {
-	text-align: center;
-	margin-top: 67px;
-	font-family: NeuzeitGro-Bol;
-  font-size: 32px;
-  font-weight: normal;
-  letter-spacing: -0.3px;
-  color: #000000;
-  margin-bottom: 0px;
-}
-
 .zip {
 	margin-top: 36px;
 	text-align: center;
@@ -126,6 +115,7 @@
 .energy-saving {
 	padding: 5px;
 	padding-left: 24px;
+  height: 100px;
 }
 
 .cut-emission {
@@ -134,11 +124,12 @@
   font-size: 32px;
   font-weight: normal;
   color: #00b36f;
+  margin-top: 0px;
 }
 
 .emission-saving {
 	float: left;
-	height: 50px;
+	padding: 5px;
   padding-left: 24px;
 }
 
@@ -146,4 +137,23 @@
 	float: right;
   padding-right: 24px;
 	height: 50px;
+}
+
+h2 {
+  height: 24px;
+  font-family: NeuzeitGro-Reg;
+  font-size: 24px;
+  font-weight: normal;
+  color: #000000;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 67px;
+  font-family: NeuzeitGro-Bol;
+  font-size: 32px;
+  font-weight: normal;
+  letter-spacing: -0.3px;
+  color: #000000;
+  margin-bottom: 0px;
 }
