@@ -6,7 +6,10 @@
     	<div class='zip'>
     		<span class = 'label'>Zip Code</span>
 	    	<%= f.label :zip, :class => "label-hide" %>
-	      <div><%= f.text_field :zip, :class => "zip-field" %></div>
+	      <div>
+          <%= f.text_field :zip, :class => "zip-field" %>
+          <button type='button' id='zip-go'>Go!</button>
+        </div>
     	</div>
 
     	<div class="container">
@@ -24,7 +27,13 @@
 	      <div class="field-col-2">
 		     
 		      <%= f.label :provider, "Energy Provider", class: "label" %>
-		      <div><%= f.collection_select(:provider, RateProvider.all, :provider, :provider, {:include_blank => "Select Provider"}, {:class => "dropdown"})%></div>
+		      <div>
+            <select disabled class="dropdown" name="entry[provider]" id="entry_provider">
+            <option value="">Select Provider</option>
+            </select>
+          </div>
+
+          <div><%#= f.collection_select(:provider, [RateProvider.first, RateProvider.last], :provider, :provider, {:include_blank => "Select Provider"}, {:class => "dropdown"})%></div>
 
 		      <%= f.label :fuel_type, "Fuel Type", class: "label" %>
 		      <div><%= f.select :fuel_type, ['Natural Gas', 'Propane', 'Butane', 'Heating Oil', 'Kerosene', 'Coal', 'Electricity'], {include_blank: "Select Fuel Type"}, {class: "dropdown"} %></div>
@@ -37,3 +46,18 @@
 
     <% end %>
 </div>
+
+<script type='text/javascript'>
+  $(document).ready(function(){
+    $('#zip-go').on('click', function(){
+      var zipCode = $('#entry_zip').val();
+      alert(zipCode);
+      //use ajax here to send zip code to rails controller action
+      //action should query db to retrieve providers for given zip
+      //response from rails should be javascript to be executed on the client
+      //the js response should populate #entry_provider with the appropriate options and enable the select box
+
+    });
+  });
+
+</script>
