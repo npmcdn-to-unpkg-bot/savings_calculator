@@ -11,7 +11,6 @@ class EntriesController < ApplicationController
   	@heating_usage = @entry.fuel_usage
   	@fuel_type = @entry.fuel_type
 
-  	@providers = RateProvider.where(zip: @zip)
   	@subregion = ZipSubregion.find_by_zip(@zip)
 
   	#Fuel information
@@ -67,6 +66,10 @@ class EntriesController < ApplicationController
 			render 'new'
 		end
 	end
+
+  def rate_providers 
+    @providers = RateProvider.where(zip: params[:zip].to_i)
+  end
 
 	private
 

@@ -51,7 +51,17 @@
   $(document).ready(function(){
     $('#zip-go').on('click', function(){
       var zipCode = $('#entry_zip').val();
-      alert(zipCode);
+      
+      $.ajax({
+        url : "/entry/rate-providers",
+        type : "get",
+        data : { zip: zipCode }
+    });
+
+      if (@providers) {
+      	alert("somethign")
+      }
+
       //use ajax here to send zip code to rails controller action
       //action should query db to retrieve providers for given zip
       //response from rails should be javascript to be executed on the client
