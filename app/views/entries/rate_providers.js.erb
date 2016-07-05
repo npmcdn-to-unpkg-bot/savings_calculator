@@ -1,13 +1,16 @@
 //write jquery code here to populate select box
 <% if !@providers.empty? %>
   //enable entry provider select box
+
   $('#entry_provider').prop('disabled', false);
 
   //here is an example of how to append a select option
   //you need to write erb here to iterate over @providers and add each provider as a select box option
-  $('#entry_provider').append($("<option></option>")
-                      .attr("value",'key')
-                      .text('value')); 
+  <% @providers.each do |p| %>
+	  $('#entry_provider').append($("<option></option>")
+	                      .attr("value", "<%= p.provider %>")
+	                      .text("<%= p.provider %>"));
+  <% end %>
 <% else %>
   alert('No providers found for that zip code :(');
 <% end %>
