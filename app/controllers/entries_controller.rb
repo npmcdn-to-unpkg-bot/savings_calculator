@@ -69,6 +69,9 @@ class EntriesController < ApplicationController
 
   def rate_providers 
     @providers = RateProvider.where(zip: params[:zip].to_i)
+    respond_to do |format|
+      format.js # actually means: if the client ask for js -> return file.js
+    end
   end
 
 	private
