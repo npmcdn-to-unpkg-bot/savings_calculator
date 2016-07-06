@@ -1,0 +1,8 @@
+<% SubregionEmission.all.each do |s| %>
+
+	var encoded = s.provider;
+	var decoded = encoded.replace(/&amp;/g, '&');
+
+	<% s.update_attributes(provider: decoded) %>
+	
+<% end %>

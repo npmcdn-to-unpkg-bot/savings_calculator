@@ -69,6 +69,10 @@ class EntriesController < ApplicationController
 
   def rate_providers 
     @providers = RateProvider.where(zip: params[:zip].to_i)
+    @providers.each do |p|
+      p.provider.sub! '&amp;', '&'
+    end
+
     respond_to do |format|
       format.js # actually means: if the client ask for js -> return file.js
     end

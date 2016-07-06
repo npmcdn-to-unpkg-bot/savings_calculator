@@ -8,8 +8,8 @@
   //you need to write erb here to iterate over @providers and add each provider as a select box option
   <% @providers.each do |p| %>
 	  $('#entry_provider').append($("<option></option>")
-	                      .attr("value", "<%= p.provider %>")
-	                      .text("<%= p.provider %>"));
+	                      .attr("value", "<%= p.provider.html_safe %>")
+	                      .text("<%= p.provider.html_safe %>"));
   <% end %>
 <% else %>
   alert('No providers found for that zip code :(');

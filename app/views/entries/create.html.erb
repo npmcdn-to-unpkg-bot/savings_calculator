@@ -6,12 +6,12 @@
 	<div class="savings">
 		<div class="energy-saving">
 			<p class="description">Your energy bill savings</p>
-			<p class="total-saving">$<%= @total_savings.round(2) %></p>
+			<p class="total-saving">$<%= "%.2f" % @total_savings.round(2) %></p>
 		</div>
 
 		<div class="emission-saving">
 			<p class="description">Carbon saved</p>
-			<p class="cut-emission"><%= @emission_reduction.round(2) %></p>
+			<p class="cut-emission"><%= "%.2f" % @emission_reduction.round(2) %></p>
 		</div>
 
 		<div class="trees">
@@ -21,12 +21,3 @@
 
 	</div>
 </div>
-
-
-
-
-<!-- <select>
-	<% @providers.each do |provider| %>
-		<option value=<%= provider.provider %>><%= provider.provider %></option><br>
-	<% end %>
-</select> -->
