@@ -6,11 +6,18 @@
 
   //here is an example of how to append a select option
   //you need to write erb here to iterate over @providers and add each provider as a select box option
+  <% if @providers.count > 1 %>
+  	$('#entry_provider').append($("<option></option>")
+	                      .attr("value", "")
+	                      .text("Select Provider"));
+  <% end %>
+
   <% @providers.each do |p| %>
 	  $('#entry_provider').append($("<option></option>")
 	                      .attr("value", "<%= p.provider.html_safe %>")
 	                      .text("<%= p.provider.html_safe %>"));
   <% end %>
+
 <% else %>
   alert('No providers found for that zip code :(');
 <% end %>
