@@ -1,17 +1,17 @@
-// $(document).ready(function(){
-//     $("#entry_provider").change(function(){
-//         if($("#entry_provider").val() == 2){
-//           $(".hidden_option").fadeIn('fast');   
-//         }            
-//     });        
-// });
+$(document).ready(function(){
+    $("#entry_provider").change(function(){
+        if($("#entry_provider").val()){
+          $("#fuel-unit").html('fast');   
+        }            
+    });        
+});
 
 $(document).ready(function(){
-    $("#entry_zip").change(function(){
-       zipcode = $("#entry_zip").val()
+    $("#fuel-unit").change(function(){
+       fuel_type = $("#fuel-type").val();
       
-       if (!zipcode.null) {
-       	$(".hidden_option").fadeIn('fast'); 
+       if (fuel_type == "Propane") {
+       	$("#fuel-unit").html("fast"); 
        }              
     });        
 });

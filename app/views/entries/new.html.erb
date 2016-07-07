@@ -24,7 +24,7 @@
 		      <%= f.label :fuel_usage, "Monthly Heating Fuel Usage", class: "label" %>
 		      <div>
 		      	<%= f.text_field :fuel_usage, :class => "entry" %>
-		      	<span class="unit">lb CO2</span>
+		      	<span class="unit" id="fuel-unit">lb CO2</span>
 					</div>
 
 	      </div>
@@ -37,10 +37,8 @@
             </select>
           </div>
 
-          <div><%#= f.collection_select(:provider, [RateProvider.first, RateProvider.last], :provider, :provider, {:include_blank => "Select Provider"}, {:class => "dropdown"})%></div>
-
 		      <%= f.label :fuel_type, "Fuel Type", class: "label" %>
-		      <div><%= f.select :fuel_type, ['Natural Gas', 'Propane', 'Butane', 'Heating Oil', 'Kerosene', 'Coal', 'Electricity'], {include_blank: "Select Fuel Type"}, {class: "dropdown"} %></div>
+		      <div><%= f.select :fuel_type, ['Natural Gas', 'Propane', 'Butane', 'Heating Oil', 'Kerosene', 'Coal', 'Electricity'], {}, {class: "dropdown", id: "fuel-type"} %></div>
 
 	      </div>
 
