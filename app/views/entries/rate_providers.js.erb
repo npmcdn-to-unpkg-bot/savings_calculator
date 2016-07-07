@@ -1,6 +1,10 @@
 //write jquery code here to populate select box
 <% if !@providers.empty? %>
   //enable entry provider select box
+  var elems = document.getElementsByClassName('container');
+  for (var i=0; i<elems.length; i+=1) {
+  elems[i].style.display = 'block';
+}
 
   $('#entry_provider').prop('disabled', false);
 
@@ -16,8 +20,9 @@
 	  $('#entry_provider').append($("<option></option>")
 	                      .attr("value", "<%= p.provider.html_safe %>")
 	                      .text("<%= p.provider.html_safe %>"));
+	$('#zip-go').attr("disabled", true);	
   <% end %>
 
 <% else %>
-  alert('No providers found for that zip code :(');
+  alert('No providers found for that zip code');
 <% end %>
