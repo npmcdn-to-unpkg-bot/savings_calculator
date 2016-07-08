@@ -3,9 +3,11 @@
   $('#entry_provider').prop('disabled', false);
 
   
+  <% if (@providers.count > 1) %>
 	$('#entry_provider').append($("<option></option>")
                       .attr("value", "")
                       .text("Select Provider"));
+  <% end %>
 
   <% @providers.each do |p| %>
 
