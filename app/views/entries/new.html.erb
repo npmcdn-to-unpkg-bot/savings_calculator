@@ -43,6 +43,7 @@
 </div>
 
 <script type='text/javascript'>
+
   $(document).ready(function(){
     $('#zip-go').on('click', function(){
       var zipCode = $('#entry_zip').val();
@@ -52,18 +53,7 @@
         type : "get",
         data : { zip: zipCode }
       });
-     
-
-      // if (@providers) {
-      // 	alert("somethign")
-      // }
-
-      //use ajax here to send zip code to rails controller action
-      //action should query db to retrieve providers for given zip
-      //response from rails should be javascript to be executed on the client
-      //the js response should populate #entry_provider with the appropriate options and enable the select box
-
     });
   });
-
+  
 </script>
