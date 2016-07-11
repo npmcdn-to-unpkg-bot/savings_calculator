@@ -6,4 +6,9 @@ $gray: #f9f9f9;
 
 .green { color: $green; }
 
-.bg-gray { background-color: $gray ;}
+.bg-gray { background-color: $gray; }
+
+.border-blue {
+	border-color: $blue;
+	border-width: 3px;
+}
