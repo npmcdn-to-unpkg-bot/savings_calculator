@@ -39,6 +39,9 @@ class EntriesController < ApplicationController
   		#Total savings
   		@total_reduced_bill = @reduced_electric_bill + @reduced_heating_bill
   		@total_savings = @total_bill - @total_reduced_bill
+      @yearly_savings = @total_savings * 12
+      @five_year_savings = @yearly_savings * 5
+
 
 
   		#Calculating reduced emissions
@@ -51,6 +54,8 @@ class EntriesController < ApplicationController
   		@total_emissions = @electric_emissions + @heat_emissions
   		@reduced_emissions = @reduced_electric_emissions + @reduced_heat_emissions
   		@emission_reduction = @total_emissions - @reduced_emissions
+      @monthly_emission_reduction = @emission_reduction / 12
+      @five_year_emission_reduction = @emission_reduction * 5
   		@trees_planted = ((@emission_reduction * 12) / 2204.62) / 0.039
 
   		

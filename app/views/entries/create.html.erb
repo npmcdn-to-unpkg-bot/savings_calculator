@@ -18,10 +18,10 @@
 				<p class='h1 blue'>$<%= "%.2f" % @total_savings.round(2) %></p>
 
 				<p>Carbon saved</p>
-				<p class='h2 green'><%= "%.2f" % @emission_reduction.round(2) %> lbs</p>
+				<p class='h2 green'><%= "%.2f" % @monthly_emission_reduction.round(2) %> lbs</p>
 
 				<p>Trees planted</p>
-				<p class='h2 green'><%= @trees_planted.round %></p>
+				<p class='h2 green'><%= (@trees_planted / 12).round %></p>
 			</div>
 		</div>
 
@@ -29,7 +29,7 @@
 			<h2>Yearly Savings</h2>
 			<div class='border bg-gray rounded py1 mx1'>
 				<p>Your energy bill savings</p>
-				<p class='h1 blue'>$<%= "%.2f" % @total_savings.round(2) %></p>
+				<p class='h1 blue'>$<%= "%.2f" % @yearly_savings.round(2) %></p>
 
 				<p>Carbon saved</p>
 				<p class='h2 green'><%= "%.2f" % @emission_reduction.round(2) %> lbs</p>
@@ -43,13 +43,13 @@
 			<h2>5 Year Savings</h2>
 			<div class='bg-gray rounded py1 mx1'>
 				<p>Your energy bill savings</p>
-				<p class='h1 blue'>$<%= "%.2f" % @total_savings.round(2) %></p>
+				<p class='h1 blue'>$<%= "%.2f" % @five_year_savings.round(2) %></p>
 
 				<p>Carbon saved</p>
-				<p class='h2 green'><%= "%.2f" % @emission_reduction.round(2) %> lbs</p>
+				<p class='h2 green'><%= "%.2f" % @five_year_emission_reduction.round(2) %> lbs</p>
 
 				<p>Trees planted</p>
-				<p class='h2 green'><%= @trees_planted.round %></p>
+				<p class='h2 green'><%= (@trees_planted * 5).round %></p>
 			</div>
 		</div>
 	</div>
