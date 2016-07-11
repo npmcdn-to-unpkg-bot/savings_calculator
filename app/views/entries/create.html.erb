@@ -1,39 +1,57 @@
 <h1>Savings Calculator</h1>
 
-<div id="result-container" class="container">
+<div class="max-width-4 mx-auto center">
+	
+	<p>By taking the following steps towards cleaner energy with the domino box:</p>
+		<ul class='inline-block'>
+			<li class='left-align'>Switching at least 80% of your light bulbs to LED</li>
+			<li class='left-align'>Switching to Nest smart thermostat</li>
+			<li class='left-align'>Using Arcadia Power</li>
+		</ul>
+	<p>You could save on your energy bill in addition to making a positive impact on the environment!</p>
 
-	<div class="path">
-		<div class="inside">
+	<div class='clearfix'>
+		<div class='col col-12 sm-col-4'>
+			<h2>Monthly Savings</h2>
+			<div class='bg-gray rounded py1 mx1'>
+				<p>Your energy bill savings</p>
+				<p class='h1 blue'>$<%= "%.2f" % @total_savings.round(2) %></p>
 
-		<p>By taking the following steps towards cleaner energy with the domino box:</p>
+				<p>Carbon saved</p>
+				<p class='h2 green'><%= "%.2f" % @emission_reduction.round(2) %> lbs</p>
 
-			<ul class="steps">
-				<li>Switching at least 80% of your light bulbs to LED</li>
-				<li>Switching to Nest smart thermostat</li>
-				<li>Using Arcadia Power</li>
-			</ul>
-		
-			
-		<p>You could save on your energy bill in addition to making a positive impact on the environment!</p>
+				<p>Trees planted</p>
+				<p class='h2 green'><%= @trees_planted.round %></p>
+			</div>
+		</div>
+
+		<div class='col col-12 sm-col-4'>
+			<h2>Yearly Savings</h2>
+			<div class='border bg-gray rounded py1 mx1'>
+				<p>Your energy bill savings</p>
+				<p class='h1 blue'>$<%= "%.2f" % @total_savings.round(2) %></p>
+
+				<p>Carbon saved</p>
+				<p class='h2 green'><%= "%.2f" % @emission_reduction.round(2) %> lbs</p>
+
+				<p>Trees planted</p>
+				<p class='h2 green'><%= @trees_planted.round %></p>
+			</div>
+		</div>
+
+		<div class='col col-12 sm-col-4'>
+			<h2>5 Year Savings</h2>
+			<div class='bg-gray rounded py1 mx1'>
+				<p>Your energy bill savings</p>
+				<p class='h1 blue'>$<%= "%.2f" % @total_savings.round(2) %></p>
+
+				<p>Carbon saved</p>
+				<p class='h2 green'><%= "%.2f" % @emission_reduction.round(2) %> lbs</p>
+
+				<p>Trees planted</p>
+				<p class='h2 green'><%= @trees_planted.round %></p>
+			</div>
 		</div>
 	</div>
 
-	<h2 id="monthly">Monthly Savings</h2>
-
-	<div class="savings">
-		<div class="energy-saving">
-			<p class="description">Your energy bill savings</p>
-			<p class="total-saving">$<%= "%.2f" % @total_savings.round(2) %></p>
-		</div>
-
-		<div class="emission-saving">
-			<p class="description">Carbon saved</p>
-			<p class="cut-emission"><%= "%.2f" % @emission_reduction.round(2) %> lbs</p>
-		</div>
-
-		<div class="trees">
-			<p class="description">Trees planted</p>
-			<p class="cut-emission"><%= @trees_planted.round %></p>
-		</div>
-	</div>
 </div>
