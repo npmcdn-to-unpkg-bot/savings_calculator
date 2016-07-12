@@ -29,7 +29,7 @@
 			<h2>Yearly Savings</h2>
 			<div class='border bg-gray rounded border-blue py1 mx1'>
 				<p>Your energy bill savings</p>
-				<p class='h1 blue'>$<%= "%.2f" % @yearly_savings.round(2) %></p>
+				<p class='h1 blue'>$<span id="saving"><%= "%.2f" % 0 %></span></p>
 
 				<p>Carbon saved</p>
 				<p class='h2 green'><%= "%.2f" % @emission_reduction.round(2) %> lbs</p>
@@ -55,3 +55,18 @@
 	</div>
 
 </div>
+
+
+<script type='text/javascript'>
+	var current = 0;
+	var amount = <%= @yearly_savings %>;
+  $(document).ready(function(){
+  	setInterval(function(){ 
+    if (current < amount) {
+    	current += 0.25;
+    	$("#saving").html(current.toFixed(2));
+    }
+   }, 5);
+  });
+  
+</script>
