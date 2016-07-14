@@ -3,7 +3,7 @@
 <div class="max-width-4 mx-auto center">
 	
 	<p>By taking the following steps towards cleaner energy with the domino box:</p>
-		<ul class='inline-block'>
+		<ul class='inline-block checks'>
 			<li class='left-align'>Switching at least 80% of your light bulbs to LED</li>
 			<li class='left-align'>Switching to Nest smart thermostat</li>
 			<li class='left-align'>Using Arcadia Power</li>
@@ -27,15 +27,16 @@
 
 		<div class='col col-12 sm-col-4'>
 			<h2>Yearly Savings</h2>
-			<div class='border bg-gray rounded border-blue py1 mx1'>
+			<div class='bg-gray rounded shadow-blue py1 mx1'>
 				<p>Your energy bill savings</p>
 				<p class='h1 blue'>$<span id="saving"><%= "%.2f" % 0 %></span></p>
 
 				<p>Carbon saved</p>
-				<p class='h2 green'><%= "%.2f" % @emission_reduction.round(2) %> lbs</p>
+				<p class='h2 green'><span id="emission"><%= "%.2f" % 0 %></span> lbs</p>
 
 				<p>Trees planted</p>
-				<p class='h2 green'><%= @trees_planted.round %></p>
+				<p class='h2 green'><span id="treenum"><%= 0 %></span></p>
+				<div id="tree-pics"></div>
 			</div>
 		</div>
 
@@ -60,6 +61,15 @@
 <script type='text/javascript'>
 	var current = 0;
 	var amount = <%= @yearly_savings %>;
+	var emissioncurrent = 0;
+	var emissionamount = <%= @emission_reduction %>;
+	var treecurrent = 0;
+	var treeamount = <%= @trees_planted %>;
+	
+
+	var src = document.getElementById("tree-pics");
+	
+
   $(document).ready(function(){
   	setInterval(function(){ 
     if (current < amount) {
@@ -67,6 +77,24 @@
     	$("#saving").html(current.toFixed(2));
     }
    }, 5);
+
+  	setInterval(function(){ 
+    if (emissioncurrent < emissionamount) {
+    	emissioncurrent += 0.20;
+    	$("#emission").html(emissioncurrent.toFixed(2));
+    }
+   }, 5);
+
+  	setInterval(function(){ 
+    if (treecurrent < treeamount) {
+    	treecurrent += 1;
+    	$("#treenum").html(treecurrent);
+    	var img = document.createElement("img");
+			img.src = '/assets/tree.png';
+			src.appendChild(img);
+    }
+   }, 200);
+
   });
   
 </script>

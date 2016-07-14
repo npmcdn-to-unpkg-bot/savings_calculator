@@ -8,7 +8,11 @@ $gray: #f9f9f9;
 
 .bg-gray { background-color: $gray; }
 
-.border-blue {
-	border-color: $blue;
-	border-width: 5px;
+.shadow-blue {
+	box-shadow: 1px 1px 5px #00ccff;
 }
+
+.checks {
+	list-style-image: url('/assets/check2.png');
+}
+
