@@ -1,5 +1,11 @@
 <h1>Savings Calculator</h1>
 
+<div class="center red mt4">
+  <% @entry.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</div>
+
 <div id='entry-form' style="padding:20px;">
   <%= form_for @entry do |f| %>
 
