@@ -6,7 +6,7 @@
   <% end %>
 </div>
 
-<div id="entry-form">
+<div id="entry-form" class="<%= @entry.errors.any? ? 'pad' : '' %>">
   <%= form_for @entry do |f| %>
 
   	<div class='zip'>
