@@ -9,6 +9,7 @@ records.each do |row|
   FuelCost.create(
     fuel_type: row['fuel_type'],
     cost: row['cost'],
+    emissions: row['emissions']
     conversion: row['conversion']
   )
 end
