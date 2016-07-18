@@ -1,0 +1,7 @@
+fuel_type,cost,conversion
+Natural Gas,1.1,0.1
+Propane,1.09,0.0916
+Butane,1.22,3.2
+Heating Oil,3,0.114
+Kerosene,3,0.134
+Coal,120,28
