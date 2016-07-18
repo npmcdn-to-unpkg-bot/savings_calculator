@@ -53,5 +53,7 @@ group :development do
   gem 'spring'
 
   gem 'htmlentities'
+
+  gem 'rails_12factor', group: :production
 end
 
