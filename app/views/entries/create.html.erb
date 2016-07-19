@@ -30,10 +30,10 @@
 			<h2>Yearly Savings</h2>
 			<div class='bg-gray rounded shadow-blue py1 mx1'>
 				<p>Your energy bill savings</p>
-				<p class='h1 blue'>$<span id="saving"><%= "%.2f" % 0 %></span></p>
+				<p class='h1 blue'>$<span id="saving"><%= 0 %></span></p>
 
 				<p>Carbon saved</p>
-				<p class='h2 green'><span id="emission"><%= "%.2f" % 0 %></span> lbs</p>
+				<p class='h2 green'><span id="emission"><%= 0 %></span> lbs</p>
 
 				<p>Trees planted</p>
 				<p class='h2 green'><span id="treenum"><%= 0 %></span></p>
@@ -82,14 +82,14 @@
   	setInterval(function(){ 
     if (current < amount) {
     	current += 0.25;
-    	$("#saving").html(current.toFixed(2));
+    	$("#saving").html(current.toFixed(0));
     }
    }, 5);
 
   	setInterval(function(){ 
     if (emissioncurrent < emissionamount) {
     	emissioncurrent += 0.20;
-    	$("#emission").html(emissioncurrent.toFixed(2));
+    	$("#emission").html(emissioncurrent.toFixed(0));
     }
    }, 5);
 
