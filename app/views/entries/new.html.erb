@@ -62,12 +62,16 @@
     });
 
     if ($('#error').html().trim() != "") {
+      var zipCode = $('#entry_zip').val();
+
       $.ajax({
         url : "/entry/rate-providers",
         type : "get",
         data : { zip: zipCode }
       });
+      $('.container').css('display', 'block');
     }
+
   });
   
 </script>
