@@ -51,6 +51,22 @@
 <script type='text/javascript'>
 
   $(document).ready(function(){
+
+    $(".zip-field").keydown(function (event) {
+      if (event.keyCode == 13) {
+        event.preventDefault();
+        // alert("ayyyyyaayyy");
+
+        var zipCode = $('#entry_zip').val();
+        
+        $.ajax({
+          url : "/entry/rate-providers",
+          type : "get",
+          data : { zip: zipCode }
+        });
+      }
+    });
+
     $('#zip-go').on('click', function(){
       var zipCode = $('#entry_zip').val();
       
@@ -60,6 +76,8 @@
         data : { zip: zipCode }
       });
     });
+
+
 
     if ($('#error').html().trim() != "") {
       var zipCode = $('#entry_zip').val();
